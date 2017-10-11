@@ -1,0 +1,16 @@
+.diseases {
+    height: 300px;
+    margin: 0px;
+}
+
+.disease-item {
+    margin-top: 10px;
+}
+
+.disease-name {
+    text-align: left;
+}
+
+.disease-cases {
+    text-align: right;
+}

@@ -1,0 +1,19 @@
+.Highlight {
+    background-color: #ffd54f;
+}
+
+.Active {
+    background-color: #f48f42;
+}
+
+.place {
+    background-color: #33dd22;
+}
+
+.time {
+    background-color: #00aadd;
+}
+
+.disease {
+    background-color: red;
+}
