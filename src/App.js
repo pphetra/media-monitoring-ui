@@ -28,6 +28,7 @@ class App extends Component {
                   <Route exact path='/' component={Groups}/>
 
                   <Route path="/province/:id" component={ProvincePage}/>
+
                   <Route exact path='/hi/:id'>
                       <Article >
                           Kenyan opposition leader Raila Odinga has pulled out of October's election re-run.

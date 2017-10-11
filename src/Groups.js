@@ -34,9 +34,9 @@ class Groups extends React.Component {
 
 const mapStateToProps = (state, ownProps) => (
     {
-        groupA: state.diseaseStore.groupA,
-        groupB: state.diseaseStore.groupB,
-        groupC: state.diseaseStore.groupC,
+        groupA: state.groupStore.groupA,
+        groupB: state.groupStore.groupB,
+        groupC: state.groupStore.groupC,
     }
 )
 
