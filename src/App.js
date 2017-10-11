@@ -7,7 +7,7 @@ import store from "./store";
 import { Provider } from "react-redux"
 
 import Groups from './group/Groups'
-import ProvincePage from './ProvincePage'
+import ProvincePage from './province'
 
 class App extends Component {
 

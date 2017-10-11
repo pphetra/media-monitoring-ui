@@ -1,6 +1,9 @@
 /**
  * Created by pphetra on 11/10/2017 AD.
  */
+/**
+ * Created by pphetra on 11/10/2017 AD.
+ */
 import React, {Component} from 'react';
 
 class ProvincePage extends Component {
