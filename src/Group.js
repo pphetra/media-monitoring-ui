@@ -28,7 +28,6 @@ class Group extends Component {
                                         </Link>
                                 </div>
                             ))
-
                         }
                     </div>
                 </div>
