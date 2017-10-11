@@ -41,7 +41,18 @@ let defaultState = {
                 {
                     provinceName: 'province A',
                     articleId: 1123,
-                    headline: 'hello world'
+                    headline: 'hello world',
+                    content: 'xxxxxxx xxxxxxx',
+                    detected: [
+                        {
+                            type: 'time',
+                            word: '28 jul 2013'
+                        },
+                        {
+                            type: 'place',
+                            word: 'province A'
+                        }
+                    ]
                 }
             ]
         },
