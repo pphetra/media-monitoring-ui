@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './Article';
-import Article from "./Article";
+import Article from "./article";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import store from "./store";
 import { Provider } from "react-redux"
 
-import Groups from './Groups'
+import Groups from './group/Groups'
 import ProvincePage from './ProvincePage'
 
 class App extends Component {

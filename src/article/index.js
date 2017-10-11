@@ -1,3 +1,6 @@
+/**
+ * Created by pphetra on 11/10/2017 AD.
+ */
 import latinize from 'latinize'
 import React, { Component } from 'react';
 import Highlighter from './Highlighter'
@@ -24,11 +27,11 @@ class Article extends Component {
 
         return (
             <div>
-                    <Highlighter
-                        highlightClassName='Highlight'
-                        searchWords={searchText}
-                        textToHighlight={textToHighlight}
-                    ></Highlighter>
+                <Highlighter
+                    highlightClassName='Highlight'
+                    searchWords={searchText}
+                    textToHighlight={textToHighlight}
+                ></Highlighter>
             </div>
         )
     }
