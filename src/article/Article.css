@@ -17,3 +17,13 @@
 .disease {
     background-color: red;
 }
+
+.headline {
+    text-align: left;
+    font-size: 120%;
+    font-weight: 700;
+}
+
+.content {
+    text-align: left;
+}

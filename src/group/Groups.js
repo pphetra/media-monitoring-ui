@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from "react-redux"
 import {Link} from "react-router-dom";
 import Group from './Group';
-
+import Header from '../header';
 
 class Groups extends React.Component {
 
@@ -11,9 +11,8 @@ class Groups extends React.Component {
         const { groupA, groupB, groupC } = this.props;
         return (
             <div>
-                <div className="page-header my-header">
-                    <h2>Disease Detected</h2>
-                </div>
+                <Header/>
+
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">

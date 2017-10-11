@@ -5,6 +5,8 @@ import latinize from 'latinize'
 import React, { Component } from 'react';
 import Highlighter from './Highlighter'
 import './Article.css';
+import Header from '../header';
+import {Button, ButtonToolbar} from "react-bootstrap";
 
 class Article extends Component {
 
@@ -26,12 +28,34 @@ class Article extends Component {
         const { searchText, textToHighlight } = this.state
 
         return (
-            <div>
-                <Highlighter
-                    highlightClassName='Highlight'
-                    searchWords={searchText}
-                    textToHighlight={textToHighlight}
-                ></Highlighter>
+            <div className="container">
+                <Header/>
+
+                <div class="row">
+                    <div className="col-md-12">
+                        <div className="panel panel-default">
+                            <div class="panel-heading headline">some headline go here.</div>
+                            <div className="panel-body content">
+                                <Highlighter
+                                    highlightClassName='Highlight'
+                                    searchWords={searchText}
+                                    textToHighlight={textToHighlight}
+                                ></Highlighter>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <ButtonToolbar>
+                            <Button bsStyle="success">Accept</Button>
+                            <Button bsStyle="danger">Reject</Button>
+                        </ButtonToolbar>
+                    </div>
+
+                </div>
             </div>
         )
     }
