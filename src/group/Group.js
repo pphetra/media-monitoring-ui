@@ -10,14 +10,15 @@ class Group extends Component {
         super(props)
         this.state = {
             data: props.data,
-            groupName: props.groupName
+            groupName: props.groupName,
+            cssName: props.cssName,
         }
     }
     render() {
         return (
             <div className="row diseases">
                 <div className="panel panel-default">
-                    <div className="panel-heading">{this.state.groupName}</div>
+                    <div className={'panel-heading ' + this.state.cssName}>{this.state.groupName}</div>
                     <div className="panel-body">
                         {
                             this.state.data.map(({ id, name, numberOfCases }) => (

@@ -28,33 +28,43 @@ class Article extends Component {
         const { searchText, textToHighlight } = this.state
 
         return (
-            <div className="container">
+
+            <div >
                 <Header/>
 
-                <div class="row">
-                    <div className="col-md-12">
-                        <div className="panel panel-default">
-                            <div class="panel-heading headline">some headline go here.</div>
-                            <div className="panel-body content">
-                                <Highlighter
-                                    highlightClassName='Highlight'
-                                    searchWords={searchText}
-                                    textToHighlight={textToHighlight}
-                                ></Highlighter>
+                <div id="page-wrapper">
 
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h1 className="page-header">http://news.vn/article/2</h1>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="panel panel-default">
+                                <div className="panel-heading headline">some headline go here.</div>
+                                <div className="panel-body content">
+                                    <Highlighter
+                                        highlightClassName='Highlight'
+                                        searchWords={searchText}
+                                        textToHighlight={textToHighlight}
+                                    ></Highlighter>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <ButtonToolbar>
-                            <Button bsStyle="success">Accept</Button>
-                            <Button bsStyle="danger">Reject</Button>
-                        </ButtonToolbar>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <ButtonToolbar>
+                                <Button bsStyle="success">Accept</Button>
+                                <Button bsStyle="danger">Reject</Button>
+                            </ButtonToolbar>
+                        </div>
+
                     </div>
-
                 </div>
             </div>
         )

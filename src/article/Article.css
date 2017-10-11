@@ -7,15 +7,17 @@
 }
 
 .place {
-    background-color: #33dd22;
+    background-color: #533747;
+    color: white;
 }
 
 .time {
-    background-color: #00aadd;
+    background-color: #00acdc;
+    color: white;
 }
 
 .disease {
-    background-color: red;
+    background-color: db4864;
 }
 
 .headline {
