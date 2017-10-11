@@ -25,9 +25,35 @@ let defaultState = {
         {
             id: 22,
             name: 'rash',
-            numberOfCases: 2
+            numberOfCases: 2,
+
         }
-    ]
+    ],
+    diseases: {
+        1: {
+            provinces: [
+                {
+                    name: 'province A',
+                    numberOfCases: 2
+                }
+            ],
+            articles: [
+                {
+                    provinceName: 'province A',
+                    articleId: 1123,
+                    headline: 'hello world'
+                }
+            ]
+        },
+        2: {
+            provinces: [
+                {
+                    name: 'province A',
+                    numberOfCases: 2
+                }
+            ]
+        }
+    }
 }
 
 const diseaseStore = (state = defaultState, action) => {
