@@ -17,6 +17,7 @@ let defaultState = {
                             articleId: 1123,
                             headline: 'ICD-10-CM Codes',
                             content: 'code to identify resistance to antimicrobial drugs',
+                            status:0,
                             detected: [
                                 {
                                     type: 'time',
@@ -32,6 +33,7 @@ let defaultState = {
                             articleId: 1123,
                             headline: 'Tuberculosis A15-A19',
                             content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
+                            status:1,
                             detected: [
                                 {
                                     type: 'time',
@@ -47,6 +49,7 @@ let defaultState = {
                             articleId: 11234,
                             headline: 'Respiratory tuberculosis A15',
                             content: 'Mycobacterium infections of the lung',
+                            status:0,
                             detected: [
                                 {
                                     type: 'time',
@@ -70,6 +73,7 @@ let defaultState = {
                             articleId: 1123,
                             headline: 'ICD-10-CM Codes',
                             content: 'code to identify resistance to antimicrobial drugs',
+                            status:1,
                             detected: [
                                 {
                                     type: 'time',
@@ -93,6 +97,7 @@ let defaultState = {
                             articleId: 1123,
                             headline: 'Tuberculosis A15-A19',
                             content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
+                            status:0,
                             detected: [
                                 {
                                     type: 'time',
@@ -108,6 +113,7 @@ let defaultState = {
                             articleId: 11234,
                             headline: 'Respiratory tuberculosis A15',
                             content: 'Mycobacterium infections of the lung',
+                            status:0,
                             detected: [
                                 {
                                     type: 'time',

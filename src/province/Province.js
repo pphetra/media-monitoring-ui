@@ -10,6 +10,7 @@ import "./Province.css"
 import diseaseStore from "../store/Disease";
 import {Link} from "react-router-dom";
 import Header from "../header";
+var FontAwesome = require('react-fontawesome');
 
 class ProvincePage extends Component {
     constructor(props) {
@@ -90,7 +91,14 @@ class ProvincePage extends Component {
                                                     {article.headline}
                                                   </Link>
                                               </td>
-                                              <td></td>
+                                              <td>
+                                                  <FontAwesome
+                                                      className='super-crazy-colors'
+                                                      name={article.status==0?'remove':'check'}
+                                                      size='2x'
+                                                      style= {article.status==0? { color: 'rgba(255, 0, 0, 1)' }:{ color: 'rgba(0, 255, 0, 1)' } }
+                                                  />
+                                              </td>
                                           </tr>
                                     ))
                                 }
