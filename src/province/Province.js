@@ -9,6 +9,7 @@ import {connect} from "react-redux"
 import "./Province.css"
 import diseaseStore from "../store/Disease";
 import {Link} from "react-router-dom";
+import Header from "../header";
 
 class ProvincePage extends Component {
     constructor(props) {
@@ -30,55 +31,72 @@ class ProvincePage extends Component {
         const {diseases} = this.props;
 
         const {selectedProvinceIdx} = this.state;
-        console.log("diseases ", diseases)
-        console.log("selectedProvinceIdx", selectedProvinceIdx)
+
         return (
             <div>
-                <h2>Province Page {diseases.name}</h2>
-                <div className="container">
-                    <div className="col-md-6">
-                        <div className="panel panel-default">
-                            <div className="panel-heading col-md-3">Province Name</div>
-                            <div className="panel-heading col-md-6">Contact Info</div>
-                            <div className="panel-heading col-md-3">Number Cases</div>
-                            <div className="panel-body">
-                                {
-                                    diseases.provinces.map((province, idx) => (
-                                        <div className="row disease-item" onClick={this.handleClick.bind(this, idx)}
-                                             key={idx}>
-                                            <div className="col-md-3">{province.name}</div>
-                                            <div className="col-md-6">{province.contactInfo}</div>
-                                            <div className="col-md-3">{province.numberOfCases}</div>
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                <Header/>
+                <h2></h2>
+                <div id="page-wrapper">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h1 className="page-header">{diseases.name}</h1>
                         </div>
                     </div>
-                    <div className="col-md-6">
-                        <div className="panel panel-default">
-                            <div className="panel-heading">List of articles</div>
-                            <div className="panel-body">
+
+                    <div className="row ">
+                        <div className="col-md-6">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Province Name</th>
+                                        <th>Contact Info</th>
+                                        <th>Number of articles</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {
+                                    diseases.provinces.map((province, idx) => {
+                                        var cssName = ""
+                                        if (idx == selectedProvinceIdx) {
+                                            cssName = "selected"
+                                        }
+                                        return (<tr className={'disease-item ' + cssName }
+                                                    onClick={this.handleClick.bind(this, idx)}
+                                                    key={idx}>
+                                            <td >{province.name}</td>
+                                            <td >{province.contactInfo}</td>
+                                            <td >{province.numberOfCases}</td>
+                                        </tr>)
+                                    })
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="col-md-6">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Headline</th>
+                                        <th>Accepted</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 {
                                     diseases.provinces[selectedProvinceIdx].articles.map((article, index) => (
-                                        <div className="row disease-item">
-                                            <Link to={`/article/${article.articleId}`} style={{width: '100%'}}>
-
-                                                <div className="row col-md-12 provinceInfo">
-                                                    <b>patientName</b>: {article.provinceName}
-                                                </div>
-                                                <div className="row  col-md-12 provinceInfo">
-                                                    <b>articleId</b>: {article.articleId}
-                                                </div>
-                                                <div className="row  col-md-12 provinceInfo">
-                                                    <b>headline</b>: {article.headline}</div>
-                                                <div className="row  col-md-12 provinceInfo">
-                                                    <b>content</b>: {article.content}</div>
-                                            </Link>
-                                        </div>
+                                          <tr className="disease-item">
+                                              <td>
+                                                  <Link to={`/article/${article.articleId}`} style={{width: '100%'}}>
+                                                    {article.headline}
+                                                  </Link>
+                                              </td>
+                                              <td></td>
+                                          </tr>
                                     ))
                                 }
-                            </div>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>

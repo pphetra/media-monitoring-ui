@@ -5,6 +5,7 @@
 
 .disease-item {
     margin-top: 10px;
+    height: 30px;
 }
 
 .disease-name {
@@ -27,4 +28,8 @@
 .provinceInfo{
     text-align: left;
     margin-left: 10px;
+}
+
+.selected {
+    background-color: #f6f8fa;
 }

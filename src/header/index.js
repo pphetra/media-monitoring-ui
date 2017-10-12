@@ -35,10 +35,13 @@ class Header extends Component {
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li>
-                                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="index.html"><i class="fa fa-table fa-fw"></i> Manage Sites</a>
+                                <a href="/sites"><i class="fa fa-table fa-fw"></i> Sites</a>
+                            </li>
+                            <li>
+                                <a href="/keywords"><i class="fa fa-table fa-fw"></i> Keywords</a>
                             </li>
                         </ul>
                     </div>
