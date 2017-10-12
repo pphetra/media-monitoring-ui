@@ -17,23 +17,18 @@ class Article extends Component {
 
         this.state = {
             articleId: props.match.params.id,
-            msg: 'hi',
-            searchText: [
-                '31 August and 26 September 2017:time',
-                'Saudi Arabia:place',
-                'MERS:disease',
-            ],
-            textToHighlight: `Between 31 August and 26 September 2017, the national IHR focal point of Saudi Arabia reported nine additional cases of Middle East Respiratory Syndrome (MERS), including four deaths. In addition, four deaths from previously reported cases were reported.`,
         }
     }
 
 
     render() {
-        const { article } = this.props
+        const { article, diseaseName } = this.props;
         const textToHighlight = article.content;
+        console.log(article);
         const searchText = article.detected.map(o => {
             return `${o.word}:${o.type}`
-        })
+        });
+        searchText.push(`${article.provinceName}:place`);
 
         return (
 
@@ -70,11 +65,11 @@ class Article extends Component {
                                         <tbody>
                                             <tr>
                                                 <td>Disease</td>
-                                                <td><input type="text"/></td>
+                                                <td><input type="text" value={diseaseName}/></td>
                                             </tr>
                                             <tr>
                                                 <td>Province</td>
-                                                <td><input type="text"/></td>
+                                                <td><input type="text" value={article.provinceName}/></td>
                                             </tr>
                                             <tr>
                                                 <td>Time</td>
@@ -115,7 +110,8 @@ const mapStateToProps = (state, ownProps) => {
         return a.articleId == articleId
     })
     return {
-        article: article
+        article: article,
+        diseaseName: disease.name,
     }
 }
 
