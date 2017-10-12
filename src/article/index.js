@@ -41,7 +41,7 @@ class Article extends Component {
                     </div>
 
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-8">
                             <div className="panel panel-default">
                                 <div className="panel-heading headline">some headline go here.</div>
                                 <div className="panel-body content">
@@ -51,6 +51,29 @@ class Article extends Component {
                                         textToHighlight={textToHighlight}
                                     ></Highlighter>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="panel panel-default">
+                                <div className="panel-heading headline">Data</div>
+                                <div className="panel-body content">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Disease</td>
+                                                <td><input type="text"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Province</td>
+                                                <td><input type="text"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Time</td>
+                                                <td><input type="text"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
