@@ -11,6 +11,8 @@ import ProvincePage from './province/Province'
 import ArticlePage from './article'
 import Report from './report'
 import './sbadmin.css'
+import Sites from './site'
+import Keywords from './keyword'
 
 class App extends Component {
 
@@ -35,6 +37,10 @@ class App extends Component {
                       <Route path="/articles/:diseaseId">
                           <h2>Articles</h2>
                       </Route>
+
+                      <Route exact path='/sites' component={Sites}/>
+
+                      <Route exact path='/keywords' component={Keywords}/>
 
                       <Route path="/report" component={Report}/>
 
