@@ -72,15 +72,15 @@ class Article extends Component {
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td>Disease</td>
+                                                <td>Bệnh</td>
                                                 <td><input type="text" value={diseaseName}/></td>
                                             </tr>
                                             <tr>
-                                                <td>Province</td>
+                                                <td>Tỉnh</td>
                                                 <td><input type="text" value={article.provinceName}/></td>
                                             </tr>
                                             <tr>
-                                                <td>Time</td>
+                                                <td>Thời gian</td>
                                                 <td><input type="text" value={this.formatTime(article.time)}/></td>
                                             </tr>
                                         </tbody>

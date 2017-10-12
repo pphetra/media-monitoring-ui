@@ -77,8 +77,8 @@ class ProvincePage extends Component {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Headline</th>
-                                        <th>Accepted</th>
+                                        <th>Tiêu đề bài viết</th>
+                                        <th>Trạng thái</th>
                                     </tr>
                                 </thead>
                                 <tbody>
