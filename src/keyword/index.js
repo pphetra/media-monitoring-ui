@@ -14,7 +14,7 @@ class Keywords extends Component {
                 <div id="page-wrapper">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h1 className="page-header">Keywords</h1>
+                            <h1 className="page-header">Từ khóa</h1>
                         </div>
                     </div>
 
@@ -24,29 +24,29 @@ class Keywords extends Component {
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>Keyword</th>
-                                    <th>Disease</th>
-                                    <th>Actions</th>
+                                    <th>Từ khóa</th>
+                                    <th>Bệnh</th>
+                                    <th>Hành động</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>MERS</td>
-                                    <td>MERS</td>
+                                    <td>Sốt xuất huyết</td>
+                                    <td>Sốt xuất huyết</td>
                                     <td>
                                         <ButtonToolbar>
-                                            <Button bsStyle="info"><i className="fa fa-edit"/> Edit</Button>
-                                            <Button bsStyle="danger"><i className="fa fa-trash-o"/> Delete</Button>
+                                            <Button bsStyle="info"><i className="fa fa-edit"/> Sửa</Button>
+                                            <Button bsStyle="danger"><i className="fa fa-trash-o"/> Xóa</Button>
                                         </ButtonToolbar>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>flu</td>
-                                    <td>Influenza</td>
+                                    <td>Cúm</td>
+                                    <td>Cúm</td>
                                     <td>
                                         <ButtonToolbar>
-                                            <Button bsStyle="info"><i className="fa fa-edit"/> Edit</Button>
-                                            <Button bsStyle="danger"><i className="fa fa-trash-o"/> Delete</Button>
+                                            <Button bsStyle="info"><i className="fa fa-edit"/> Sửa</Button>
+                                            <Button bsStyle="danger"><i className="fa fa-trash-o"/> Xóa</Button>
                                         </ButtonToolbar>
                                     </td>
                                 </tr>

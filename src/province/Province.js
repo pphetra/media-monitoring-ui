@@ -49,9 +49,9 @@ class ProvincePage extends Component {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Province Name</th>
-                                        <th>Contact Info</th>
-                                        <th>Number of articles</th>
+                                        <th>Tên Tỉnh</th>
+                                        <th>Thông tin liên hệ</th>
+                                        <th>Số lượng bài viết</th>
                                     </tr>
                                 </thead>
                                 <tbody>

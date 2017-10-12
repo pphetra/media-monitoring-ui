@@ -15,7 +15,7 @@ class Report extends Component {
                 <div id="page-wrapper">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h1 className="page-header">Generate Report</h1>
+                            <h1 className="page-header">Báo cáo chung</h1>
                         </div>
                     </div>
 
@@ -30,7 +30,7 @@ class Report extends Component {
                     <div className="row">
                         <div className="col-md-12">
                             <ButtonToolbar>
-                                <Button bsStyle="success">Submit</Button>
+                                <Button bsStyle="success">Xác nhận</Button>
                             </ButtonToolbar>
                         </div>
                     </div>

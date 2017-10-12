@@ -17,19 +17,19 @@ class Groups extends React.Component {
                 <div id="page-wrapper">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h1 className="page-header">Detected Diseases</h1>
+                            <h1 className="page-header">Các sự kiện được phát hiện</h1>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-md-4">
-                            <Group data={groupA} groupName="Group A" cssName="group_a"/>
+                            <Group data={groupA} groupName="Nhóm A" cssName="group_a"/>
                         </div>
                         <div className="col-md-4">
-                            <Group data={groupB} groupName="Group B" cssName="group_b"/>
+                            <Group data={groupB} groupName="Nhóm B" cssName="group_b"/>
                         </div>
                         <div className="col-md-4">
-                            <Group data={groupC} groupName="Group C" cssName="group_c"/>
+                            <Group data={groupC} groupName="Nhóm C" cssName="group_c"/>
                         </div>
                     </div>
 

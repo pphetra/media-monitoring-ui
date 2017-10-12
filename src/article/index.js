@@ -67,7 +67,7 @@ class Article extends Component {
                         </div>
                         <div className="col-md-4">
                             <div className="panel panel-default">
-                                <div className="panel-heading headline">Data</div>
+                                <div className="panel-heading headline">Dữ liệu</div>
                                 <div className="panel-body content">
                                     <table class="table">
                                         <tbody>
@@ -93,8 +93,8 @@ class Article extends Component {
                     <div className="row">
                         <div className="col-md-12">
                             <ButtonToolbar>
-                                <Button bsStyle="success">Accept</Button>
-                                <Button bsStyle="danger">Reject</Button>
+                                <Button bsStyle="success">Duyệt</Button>
+                                <Button bsStyle="danger">Từ chối</Button>
                             </ButtonToolbar>
                         </div>
 
