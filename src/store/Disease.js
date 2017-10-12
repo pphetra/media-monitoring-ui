@@ -66,40 +66,10 @@ let defaultState = {
                     numberOfCases: 10,
                     articles: [
                         {
-                            provinceName: 'province A',
+                            provinceName: 'province C',
                             articleId: 1123,
                             headline: 'ICD-10-CM Codes',
                             content: 'code to identify resistance to antimicrobial drugs',
-                            detected: [
-                                {
-                                    type: 'time',
-                                    word: '28 jul 2013'
-                                },
-                                {
-                                    type: 'place',
-                                    word: 'province A'
-                                }
-                            ]
-                        },{
-                            provinceName: 'province B',
-                            articleId: 1123,
-                            headline: 'Tuberculosis A15-A19',
-                            content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
-                            detected: [
-                                {
-                                    type: 'time',
-                                    word: '28 jul 2013'
-                                },
-                                {
-                                    type: 'place',
-                                    word: 'province A'
-                                }
-                            ]
-                        },{
-                            provinceName: 'province C',
-                            articleId: 11234,
-                            headline: 'Respiratory tuberculosis A15',
-                            content: 'Mycobacterium infections of the lung',
                             detected: [
                                 {
                                     type: 'time',
@@ -119,21 +89,6 @@ let defaultState = {
                     numberOfCases: 100,
                     articles: [
                         {
-                            provinceName: 'province A',
-                            articleId: 1123,
-                            headline: 'ICD-10-CM Codes',
-                            content: 'code to identify resistance to antimicrobial drugs',
-                            detected: [
-                                {
-                                    type: 'time',
-                                    word: '28 jul 2013'
-                                },
-                                {
-                                    type: 'place',
-                                    word: 'province A'
-                                }
-                            ]
-                        },{
                             provinceName: 'province B',
                             articleId: 1123,
                             headline: 'Tuberculosis A15-A19',
