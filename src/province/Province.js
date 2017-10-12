@@ -7,6 +7,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux"
 import "./Province.css"
+import diseaseStore from "../store/Disease";
 
 class ProvincePage extends Component {
     constructor(props) {
@@ -28,6 +29,9 @@ class ProvincePage extends Component {
         const {diseases} = this.props;
 
         const {selectedProvinceIdx} = this.state;
+        const articles = diseases.provinces[selectedProvinceIdx].articles
+        console.log("diseases ", articles)
+        console.log("selectedProvinceIdx",selectedProvinceIdx)
         return (
             <div>
                 <h2>Province Page {diseases.name}</h2>
@@ -53,18 +57,11 @@ class ProvincePage extends Component {
                     </div>
                     <div className="col-md-6">
                         <div className="panel panel-default">
-                            <div className="panel-heading">Provinces Detail</div>
-                            <div className="panel-body">
-                                <div className="row">
-                                    <div className="row col-md-12 provinceInfo">
-                                        <b>patientName</b>: {diseases.articles[selectedProvinceIdx].provinceName}</div>
-                                    <div className="row  col-md-12 provinceInfo">
-                                        <b>articleId</b>: {diseases.articles[selectedProvinceIdx].articleId}</div>
-                                    <div className="row  col-md-12 provinceInfo">
-                                        <b>headline</b>: {diseases.articles[selectedProvinceIdx].headline}</div>
-                                    <div className="row  col-md-12 provinceInfo">
-                                        <b>content</b>: {diseases.articles[selectedProvinceIdx].content}</div>
-                                </div>
+                            <div className="panel-heading">List of articles</div>
+                            <div className="panel-body">{articles.map(()=>{
+                                <div>dfasdf</div>
+                            })}
+
                             </div>
                         </div>
                     </div>
