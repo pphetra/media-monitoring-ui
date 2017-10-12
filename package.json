@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "carbondream": "^0.3.1",
+    "dateformat": "^3.0.2",
     "latinize": "^0.4.0",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",

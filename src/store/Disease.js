@@ -15,8 +15,10 @@ let defaultState = {
                         {
                             provinceName: 'province A',
                             articleId: 1123,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'ICD-10-CM Codes',
-                            content: 'code to identify resistance to antimicrobial drugs',
+                            content: 'code to identify province A 12/10/2017 resistance to MERS antimicrobial drugs',
                             status:0,
                             detected: [
                                 {
@@ -31,6 +33,8 @@ let defaultState = {
                         },{
                             provinceName: 'province B',
                             articleId: 1123,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'Tuberculosis A15-A19',
                             content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
                             status:1,
@@ -47,6 +51,8 @@ let defaultState = {
                         },{
                             provinceName: 'province C',
                             articleId: 11234,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'Respiratory tuberculosis A15',
                             content: 'Mycobacterium infections of the lung',
                             status:0,
@@ -71,6 +77,8 @@ let defaultState = {
                         {
                             provinceName: 'province C',
                             articleId: 1123,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'ICD-10-CM Codes',
                             content: 'code to identify resistance to antimicrobial drugs',
                             status:1,
@@ -95,6 +103,8 @@ let defaultState = {
                         {
                             provinceName: 'province B',
                             articleId: 1123,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'Tuberculosis A15-A19',
                             content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
                             status:0,
@@ -111,6 +121,8 @@ let defaultState = {
                         },{
                             provinceName: 'province C',
                             articleId: 11234,
+                            time: new Date().getTime(),
+                            url: 'http://xxx.com',
                             headline: 'Respiratory tuberculosis A15',
                             content: 'Mycobacterium infections of the lung',
                             status:0,

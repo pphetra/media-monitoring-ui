@@ -10,6 +10,8 @@ import './Article.css';
 import Header from '../header';
 import {Button, ButtonToolbar} from "react-bootstrap";
 
+var dateFormat = require('dateformat');
+
 class Article extends Component {
 
     constructor(props) {
@@ -20,15 +22,21 @@ class Article extends Component {
         }
     }
 
+    formatTime(time) {
+        const d = new Date(time);
+        return dateFormat(d, "dd/mm/yyyy");
+    }
+
 
     render() {
         const { article, diseaseName } = this.props;
         const textToHighlight = article.content;
-        console.log(article);
         const searchText = article.detected.map(o => {
             return `${o.word}:${o.type}`
         });
         searchText.push(`${article.provinceName}:place`);
+        searchText.push(`${this.formatTime(article.time)}:time`);
+        searchText.push(`${diseaseName}:disease`);
 
         return (
 
@@ -39,7 +47,7 @@ class Article extends Component {
 
                     <div className="row">
                         <div className="col-lg-12">
-                            <h1 className="page-header">http://news.vn/article/2</h1>
+                            <h1 className="page-header">{article.url}</h1>
                         </div>
                     </div>
 
@@ -73,7 +81,7 @@ class Article extends Component {
                                             </tr>
                                             <tr>
                                                 <td>Time</td>
-                                                <td><input type="text"/></td>
+                                                <td><input type="text" value={this.formatTime(article.time)}/></td>
                                             </tr>
                                         </tbody>
                                     </table>
