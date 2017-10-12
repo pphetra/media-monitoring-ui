@@ -8,6 +8,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux"
 import "./Province.css"
 import diseaseStore from "../store/Disease";
+import {Link} from "react-router-dom";
 
 class ProvincePage extends Component {
     constructor(props) {
@@ -61,16 +62,19 @@ class ProvincePage extends Component {
                                 {
                                     diseases.provinces[selectedProvinceIdx].articles.map((article, index) => (
                                         <div className="row disease-item">
-                                            <div className="row col-md-12 provinceInfo">
-                                                <b>patientName</b>: {article.provinceName}
-                                            </div>
-                                            <div className="row  col-md-12 provinceInfo">
-                                                <b>articleId</b>: {article.articleId}
-                                            </div>
-                                            <div className="row  col-md-12 provinceInfo">
-                                                <b>headline</b>: {article.headline}</div>
-                                            <div className="row  col-md-12 provinceInfo">
-                                                <b>content</b>: {article.content}</div>
+                                            <Link to={`/article/${article.articleId}`} style={{width: '100%'}}>
+
+                                                <div className="row col-md-12 provinceInfo">
+                                                    <b>patientName</b>: {article.provinceName}
+                                                </div>
+                                                <div className="row  col-md-12 provinceInfo">
+                                                    <b>articleId</b>: {article.articleId}
+                                                </div>
+                                                <div className="row  col-md-12 provinceInfo">
+                                                    <b>headline</b>: {article.headline}</div>
+                                                <div className="row  col-md-12 provinceInfo">
+                                                    <b>content</b>: {article.content}</div>
+                                            </Link>
                                         </div>
                                     ))
                                 }
