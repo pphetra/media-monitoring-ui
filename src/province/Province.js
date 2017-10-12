@@ -7,7 +7,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux"
 import "./Province.css"
-import diseaseStore from "../store/Disease";
 import {Link} from "react-router-dom";
 import Header from "../header";
 var FontAwesome = require('react-fontawesome');
@@ -87,7 +86,7 @@ class ProvincePage extends Component {
                                     diseases.provinces[selectedProvinceIdx].articles.map((article, index) => (
                                           <tr className="disease-item">
                                               <td>
-                                                  <Link to={`/article/${article.articleId}`} style={{width: '100%'}}>
+                                                  <Link to={`/article/${article.articleId}/${article.provinceName}/${this.props.match.params.id}`} style={{width: '100%'}}>
                                                     {article.headline}
                                                   </Link>
                                               </td>
@@ -113,14 +112,15 @@ class ProvincePage extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => (
-    {
-        diseases: state.diseaseStore.diseases[ownProps.match.params.id],
+const mapStateToProps = (state, ownProps) => {
+    console.log('>>>>', state)
+    return {
+        diseases: state.diseaseStore.diseases[ownProps.match.params.id]
     }
-)
+}
 
 const mapDispatchToProps = dispatch => {
     return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps())(ProvincePage)
+export default connect(mapStateToProps, mapDispatchToProps)(ProvincePage)

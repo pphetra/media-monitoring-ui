@@ -3,6 +3,8 @@
  */
 import latinize from 'latinize'
 import React, { Component } from 'react';
+import {connect} from "react-redux"
+
 import Highlighter from './Highlighter'
 import './Article.css';
 import Header from '../header';
@@ -12,7 +14,9 @@ class Article extends Component {
 
     constructor(props) {
         super(props)
+
         this.state = {
+            articleId: props.match.params.id,
             msg: 'hi',
             searchText: [
                 '31 August and 26 September 2017:time',
@@ -25,7 +29,11 @@ class Article extends Component {
 
 
     render() {
-        const { searchText, textToHighlight } = this.state
+        const { article } = this.props
+        const textToHighlight = article.content;
+        const searchText = article.detected.map(o => {
+            return `${o.word}:${o.type}`
+        })
 
         return (
 
@@ -43,7 +51,7 @@ class Article extends Component {
                     <div className="row">
                         <div className="col-md-8">
                             <div className="panel panel-default">
-                                <div className="panel-heading headline">some headline go here.</div>
+                                <div className="panel-heading headline">{article.headline}</div>
                                 <div className="panel-body content">
                                     <Highlighter
                                         highlightClassName='Highlight'
@@ -94,4 +102,27 @@ class Article extends Component {
     }
 }
 
-export default Article
+const mapStateToProps = (state, ownProps) => {
+    const articleId = ownProps.match.params.id;
+    const provinceName = ownProps.match.params.provinceName;
+    const diseaseId = ownProps.match.params.diseaseId;
+
+    const disease = state.diseaseStore.diseases[diseaseId];
+    const province = disease.provinces.find((p) => {
+        return p.name === provinceName
+    })
+    const article = province.articles.find((a) => {
+        return a.articleId == articleId
+    })
+    return {
+        article: article
+    }
+}
+
+
+const mapDispatchToProps = dispatch => {
+    return {}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Article)

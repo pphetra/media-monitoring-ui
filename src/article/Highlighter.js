@@ -60,7 +60,6 @@ export default function Highlighter ({
         <span className={className}>
       {chunks.map((chunk, index) => {
           const text = textToHighlight.substr(chunk.start, chunk.end - chunk.start)
-          console.log(chunk);
           if (chunk.highlight) {
               highlightCount++
 
@@ -73,7 +72,6 @@ export default function Highlighter ({
                   : highlightStyle
 
               if (chunk.type) {
-                  console.log('found')
                   highlightClassNames = highlightClassNames + ' ' + chunk.type;
               }
 

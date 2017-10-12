@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Article from "./article";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import store from "./store";
 import { Provider } from "react-redux"
 
 import Groups from './group/Groups'
 import ProvincePage from './province/Province'
-import ArticlePage from './article'
+import Article from './article'
 import Report from './report'
 import './sbadmin.css'
 import Sites from './site'
@@ -44,7 +43,7 @@ class App extends Component {
 
                       <Route path="/report" component={Report}/>
 
-                      <Route path="/article/:id" component={ArticlePage}/>
+                      <Route path="/article/:id/:provinceName/:diseaseId" component={Article}/>
                   </Switch>
 
               </BrowserRouter>
