@@ -14,3 +14,17 @@
 .disease-cases {
     text-align: right;
 }
+
+.title{
+    font-weight: bold;
+    display: inline;
+    text-align: left;
+    float: left;
+}
+
+
+
+.provinceInfo{
+    text-align: left;
+    margin-left: 10px;
+}

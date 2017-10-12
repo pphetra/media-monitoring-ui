@@ -7,7 +7,7 @@ import store from "./store";
 import { Provider } from "react-redux"
 
 import Groups from './group/Groups'
-import ProvincePage from './province'
+import ProvincePage from './province/Province'
 import ArticlePage from './article'
 import './sbadmin.css'
 
