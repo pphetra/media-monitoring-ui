@@ -9,6 +9,7 @@ import Highlighter from './Highlighter'
 import './Article.css';
 import Header from '../header';
 import {Button, ButtonToolbar} from "react-bootstrap";
+import { Route } from 'react-router-dom'
 
 var dateFormat = require('dateformat');
 
@@ -20,11 +21,48 @@ class Article extends Component {
         this.state = {
             articleId: props.match.params.id,
         }
+
+        this.accept = this.accept.bind(this);
+        this.reject = this.reject.bind(this);
     }
 
     formatTime(time) {
         const d = new Date(time);
         return dateFormat(d, "dd/mm/yyyy");
+    }
+
+    accept(history) {
+        return () => {
+            const articleId = this.props.match.params.id;
+            const provinceName = this.props.match.params.provinceName;
+            const diseaseId = this.props.match.params.diseaseId;
+
+            this.props.accept(
+                articleId,
+                provinceName,
+                diseaseId
+            );
+
+            history.push('/province/' + diseaseId)
+        }
+
+    }
+
+    reject(history) {
+        return () => {
+            const articleId = this.props.match.params.id;
+            const provinceName = this.props.match.params.provinceName;
+            const diseaseId = this.props.match.params.diseaseId;
+
+            this.props.reject(
+                articleId,
+                provinceName,
+                diseaseId
+            );
+            history.push('/province/' + diseaseId)
+        }
+
+
     }
 
 
@@ -85,17 +123,19 @@ class Article extends Component {
                                             </tr>
                                         </tbody>
                                     </table>
+
+                                    <ButtonToolbar>
+                                        <Route render={({ history}) => (
+                                            <Button bsStyle="success" onClick={this.accept(history)}>Duyệt</Button>
+
+                                        )} />
+                                        <Route render={({ history}) => (
+                                            <Button bsStyle="danger" onClick={this.reject(history)}>Từ chối</Button>
+                                        )} />
+
+                                    </ButtonToolbar>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-md-12">
-                            <ButtonToolbar>
-                                <Button bsStyle="success">Duyệt</Button>
-                                <Button bsStyle="danger">Từ chối</Button>
-                            </ButtonToolbar>
                         </div>
 
                     </div>
@@ -112,7 +152,7 @@ const mapStateToProps = (state, ownProps) => {
 
     const disease = state.diseaseStore.diseases[diseaseId];
     const province = disease.provinces.find((p) => {
-        return p.name === provinceName
+        return p.name == provinceName
     })
     const article = province.articles.find((a) => {
         return a.articleId == articleId
@@ -125,7 +165,25 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        accept: (articleId, provinceName, diseaseId) => {
+            console.log('accept');
+            dispatch({
+                type: 'accept',
+                articleId: articleId,
+                provinceName: provinceName,
+                diseaseId: diseaseId,
+            })
+        },
+        reject: (articleId, provinceName, diseaseId) => {
+            dispatch({
+                type: 'reject',
+                articleId: articleId,
+                provinceName: provinceName,
+                diseaseId: diseaseId,
+            })
+        }
+    }
 }
 
 

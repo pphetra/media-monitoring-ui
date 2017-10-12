@@ -14,7 +14,7 @@ let defaultState = {
                     articles: [
                         {
                             provinceName: 'province A',
-                            articleId: 1123,
+                            articleId: 2122,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'ICD-10-CM Codes',
@@ -31,13 +31,13 @@ let defaultState = {
                                 }
                             ]
                         },{
-                            provinceName: 'province B',
-                            articleId: 1123,
+                            provinceName: 'province A',
+                            articleId: 2123,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'Tuberculosis A15-A19',
                             content: 'infections due to Mycobacterium tuberculosis and Mycobacterium bovis',
-                            status:1,
+                            status:0,
                             detected: [
                                 {
                                     type: 'time',
@@ -49,8 +49,8 @@ let defaultState = {
                                 }
                             ]
                         },{
-                            provinceName: 'province C',
-                            articleId: 11234,
+                            provinceName: 'province A',
+                            articleId: 2234,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'Respiratory tuberculosis A15',
@@ -76,7 +76,7 @@ let defaultState = {
                     articles: [
                         {
                             provinceName: 'province C',
-                            articleId: 1123,
+                            articleId: 1223,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'ICD-10-CM Codes',
@@ -102,7 +102,7 @@ let defaultState = {
                     articles: [
                         {
                             provinceName: 'province B',
-                            articleId: 1123,
+                            articleId: 1225,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'Tuberculosis A15-A19',
@@ -120,7 +120,7 @@ let defaultState = {
                             ]
                         },{
                             provinceName: 'province C',
-                            articleId: 11234,
+                            articleId: 1126,
                             time: new Date().getTime(),
                             url: 'http://xxx.com',
                             headline: 'Respiratory tuberculosis A15',
@@ -154,7 +154,7 @@ let defaultState = {
             articles: [
                 {
                     provinceName: 'province A',
-                    articleId: 1123,
+                    articleId: 112300,
                     headline: 'hello world',
                     content: 'xxxxxxx xxxxxxx',
                     detected: [
@@ -169,7 +169,7 @@ let defaultState = {
                     ]
                 },{
                     provinceName: 'province B',
-                    articleId: 1123,
+                    articleId: 112310,
                     headline: 'hello world',
                     content: 'xxxxxxx xxxxxxx',
                     detected: [
@@ -184,7 +184,7 @@ let defaultState = {
                     ]
                 },{
                     provinceName: 'province C',
-                    articleId: 11234,
+                    articleId: 112340,
                     headline: 'hello world 2',
                     content: 'xxxxxxx xxxxxxxdsdfasdf',
                     detected: [
@@ -204,6 +204,22 @@ let defaultState = {
 }
 
 const diseaseStore = (state = defaultState, action) => {
+
+    if (action.type === 'accept' || action.type === 'reject') {
+
+
+        const articleId = action.articleId;
+        const provinceName = action.provinceName;
+        const diseaseId = action.diseaseId;
+
+        const disease = state.diseases[diseaseId];
+        const province = disease.provinces.find((p) => {
+            return p.name === provinceName
+        });
+
+        localStorage.setItem(articleId, action.type === 'accept' ? 1 : -1)
+
+    }
     return state
 }
 

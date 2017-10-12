@@ -27,6 +27,43 @@ class ProvincePage extends Component {
         })
     }
 
+    renderStatus(articleId) {
+        const status = localStorage.getItem(articleId)
+        console.log(status)
+        if (status === null || status === 0) {
+            return (
+                <span></span>
+            )
+        } else if (status == -1) {
+            return (
+                <FontAwesome
+                    className='super-crazy-colors'
+                    name='remove'
+                    size='2x'
+                    style={{
+                        color: 'rgba(255, 0, 0, 1)'
+                    }}
+
+                />
+            )
+
+        } else if (status == 1) {
+            return (
+                <FontAwesome
+                    className='super-crazy-colors'
+                    name='check'
+                    size='2x'
+                    style={{
+                        color: 'rgba(0, 255, 0, 1)'
+                    }}
+
+                />
+            )
+        } else {
+            return (<span>hello</span>)
+        }
+    }
+
     render() {
         const {diseases} = this.props;
 
@@ -91,12 +128,7 @@ class ProvincePage extends Component {
                                                   </Link>
                                               </td>
                                               <td>
-                                                  <FontAwesome
-                                                      className='super-crazy-colors'
-                                                      name={article.status==0?'remove':'check'}
-                                                      size='2x'
-                                                      style= {article.status==0? { color: 'rgba(255, 0, 0, 1)' }:{ color: 'rgba(0, 255, 0, 1)' } }
-                                                  />
+                                                  { this.renderStatus(article.articleId) }
                                               </td>
                                           </tr>
                                     ))
@@ -113,7 +145,6 @@ class ProvincePage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('>>>>', state)
     return {
         diseases: state.diseaseStore.diseases[ownProps.match.params.id]
     }
