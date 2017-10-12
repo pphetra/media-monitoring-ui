@@ -29,9 +29,8 @@ class ProvincePage extends Component {
         const {diseases} = this.props;
 
         const {selectedProvinceIdx} = this.state;
-        const articles = diseases.provinces[selectedProvinceIdx].articles
-        console.log("diseases ", articles)
-        console.log("selectedProvinceIdx",selectedProvinceIdx)
+        console.log("diseases ", diseases)
+        console.log("selectedProvinceIdx", selectedProvinceIdx)
         return (
             <div>
                 <h2>Province Page {diseases.name}</h2>
@@ -58,10 +57,23 @@ class ProvincePage extends Component {
                     <div className="col-md-6">
                         <div className="panel panel-default">
                             <div className="panel-heading">List of articles</div>
-                            <div className="panel-body">{articles.map(()=>{
-                                <div>dfasdf</div>
-                            })}
-
+                            <div className="panel-body">
+                                {
+                                    diseases.provinces[selectedProvinceIdx].articles.map((article, index) => (
+                                        <div className="row disease-item">
+                                            <div className="row col-md-12 provinceInfo">
+                                                <b>patientName</b>: {article.provinceName}
+                                            </div>
+                                            <div className="row  col-md-12 provinceInfo">
+                                                <b>articleId</b>: {article.articleId}
+                                            </div>
+                                            <div className="row  col-md-12 provinceInfo">
+                                                <b>headline</b>: {article.headline}</div>
+                                            <div className="row  col-md-12 provinceInfo">
+                                                <b>content</b>: {article.content}</div>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
