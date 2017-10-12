@@ -38,6 +38,9 @@ class Header extends Component {
                                 <a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
+                                <a href="/report"><i class="fa fa-file fa-fw"></i> Generate Report</a>
+                            </li>
+                            <li>
                                 <a href="/sites"><i class="fa fa-table fa-fw"></i> Sites</a>
                             </li>
                             <li>

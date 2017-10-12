@@ -9,6 +9,7 @@ import { Provider } from "react-redux"
 import Groups from './group/Groups'
 import ProvincePage from './province/Province'
 import ArticlePage from './article'
+import Report from './report'
 import './sbadmin.css'
 
 class App extends Component {
@@ -34,6 +35,8 @@ class App extends Component {
                       <Route path="/articles/:diseaseId">
                           <h2>Articles</h2>
                       </Route>
+
+                      <Route path="/report" component={Report}/>
 
                       <Route path="/article/:id" component={ArticlePage}/>
                   </Switch>
