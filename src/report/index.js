@@ -21,9 +21,30 @@ class Report extends Component {
 
                     <div className="row">
                         <div className="col-md-12">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Disease</th>
+                                        <th>Province</th>
+                                        <th># articles</th>
+                                        <th>Date occured</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Disease1</td>
+                                        <td>Province A</td>
+                                        <td>2</td>
+                                        <td>12/10/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disease2</td>
+                                        <td>Province A</td>
+                                        <td>1</td>
+                                        <td>11/10/2017</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
