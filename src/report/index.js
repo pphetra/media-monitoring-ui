@@ -24,23 +24,23 @@ class Report extends Component {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Disease</th>
-                                        <th>Province</th>
-                                        <th># articles</th>
-                                        <th>Date occured</th>
+                                        <th>Tên Bệnh</th>
+                                        <th>Tỉnh</th>
+                                        <th>Số lượng bài báo</th>
+                                        <th>Ngày</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Disease1</td>
-                                        <td>Province A</td>
-                                        <td>2</td>
+                                        <td>Sốt xuất huyết</td>
+                                        <td>Hà Nội</td>
+                                        <td>68</td>
                                         <td>12/10/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>Disease2</td>
-                                        <td>Province A</td>
-                                        <td>1</td>
+                                        <td>Tiêu chảy</td>
+                                        <td>Hòa Bình</td>
+                                        <td>15</td>
                                         <td>11/10/2017</td>
                                     </tr>
                                 </tbody>
